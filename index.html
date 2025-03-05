@@ -53,7 +53,7 @@
             transform: scale(1.1);
         }
 
-       nav {
+   nav {
     position: fixed;
     top: 0;
     right: -200px;
@@ -66,7 +66,7 @@
     transition: right 0.4s ease;
     z-index: 999;
     box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
-    overflow-y: auto; /* הוסף גלילה פנימית */
+    overflow-y: auto; /* שמור על גלילה פנימית */
 }
         nav.open {
             right: 0;
@@ -233,14 +233,15 @@
             text-align: center;
             padding: 20px;
             background: #1e40af;
-            color: #fff;
+            color: #48bb78;
             font-size: 16px;
         }
-       /* רספונסיביות עבור מסכים קטנים (טלפונים, מתחת ל-768px) */
+    /* רספונסיביות עבור טלפונים */
 @media screen and (max-width: 768px) {
-    header {
-        padding: 10px 20px; /* פחות שוליים בטלפון */
+    nav {
+        width: 180px; /* הקטן את רוחב התפריט בטלפונים */
     }
+}
 
     .header-title {
         font-size: 18px; /* טקסט קטן יותר בטלפון */
@@ -299,32 +300,33 @@
         right: 5px; /* קרוב לקצה ימין */
     }
 
-  /* כרטיסיות המייסדים */
-.founders-container {
-    flex-direction: column; /* שמור על ערימה אנכית בטלפון */
-    gap: 30px; /* הגדל את הרווח בין הכרטיסיות */
-}
+ /* כרטיסיות המייסדים */
+    .founders-container {
+        flex-direction: column; /* שמור על ערימה אנכית בטלפון */
+        gap: 40px; /* הגדל את הרווח בין הכרטיסיות */
+    }
 
-.founder-card {
-    width: 100%; /* שמור על רוחב מלא */
-    padding: 20px; /* הגדל את הרווחים הפנימיים */
-}
+    .founder-card {
+        width: 100%; /* שמור על רוחב מלא */
+        padding: 15px; /* הקטן את הרווחים הפנימיים */
+    }
 
-.founder-card img {
-    width: 100px; /* הקטן את התמונות עוד יותר בטלפון */
-    height: 100px;
-}
+    .founder-card img {
+        width: 100px; /* שמור על גודל התמונות */
+        height: 100px;
+    }
 
-.founder-card .founder-title {
-    font-size: 16px; /* הקטן את הכותרת עוד יותר בטלפון */
-}
+    .founder-card .founder-title {
+        font-size: 16px; /* שמור על כותרת */
+    }
 
-.founder-card p {
-    font-size: 14px; /* הקטן את הטקסט בטלפון */
-}
+    .founder-card p {
+        font-size: 14px; /* שמור על טקסט */
+    }
 
-.founder-card .quote {
-    font-size: 14px; /* הקטן את הציטוט בטלפון */
+    .founder-card .quote {
+        font-size: 14px; /* שמור על ציטוט */
+    }
 }
 
     .founder-card .founder-title {
