@@ -235,6 +235,88 @@
             color: #fff;
             font-size: 16px;
         }
+        /* רספונסיביות עבור מסכים קטנים (טלפונים, מתחת ל-768px) */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px 20px; /* פחות שוליים בטלפון */
+    }
+
+    .header-title {
+        font-size: 18px; /* טקסט קטן יותר בטלפון */
+    }
+
+    .menu-button {
+        font-size: 24px; /* כפתור תפריט קטן יותר */
+    }
+
+    nav {
+        width: 200px; /* תפריט צר יותר בטלפון */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* טקסט קטן יותר בתפריט */
+        padding: 10px 20px;
+    }
+
+    section {
+        padding: 80px 20px 40px; /* פחות שוליים בטלפון */
+        max-width: 100%; /* רוחב מלא בטלפון */
+    }
+
+    h2 {
+        font-size: 24px; /* כותרת קטנה יותר בטלפון */
+    }
+
+    p {
+        font-size: 16px; /* טקסט קטן יותר בטלפון */
+    }
+
+    /* תמונות צפות - הסתר או הקטן בטלפון */
+    .floating-img {
+        display: none; /* הסתר תמונות בטלפון כדי לאפשר מקום לטקסט */
+    }
+
+    /* כרטיסיות המייסדים */
+    .founders-container {
+        flex-direction: column; /* כרטיסיות אחת מתחת לשנייה בטלפון */
+        gap: 20px;
+    }
+
+    .founder-card {
+        width: 100%; /* כרטיסיות ברוחב מלא בטלפון */
+        padding: 15px;
+    }
+
+    .founder-card img {
+        width: 120px; /* תמונות קטנות יותר בטלפון */
+        height: 120px;
+    }
+
+    .founder-card .founder-title {
+        font-size: 18px; /* כותרת קטנה יותר בטלפון */
+    }
+
+    footer {
+        padding: 15px; /* פחות שוליים בטלפון */
+        font-size: 14px; /* טקסט קטן יותר בטלפון */
+    }
+}
+
+/* רספונסיביות עבור מסכים בינוניים (טאבלטים, 768px-1024px) */
+@media screen and (max-width: 1024px) {
+    section {
+        max-width: 90%; /* רוחב קצת צר יותר בטאבלטים */
+        padding: 100px 30px 50px;
+    }
+
+    .floating-img {
+        width: 200px; /* תמונות קטנות יותר בטאבלטים */
+    }
+
+    .founder-card {
+        width: 45%; /* כרטיסיות קצת צרות יותר בטאבלטים */
+    }
+}
     </style>
 </head>
 <body>
