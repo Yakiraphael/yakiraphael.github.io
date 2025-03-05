@@ -235,7 +235,7 @@
             color: #fff;
             font-size: 16px;
         }
-        /* רספונסיביות עבור מסכים קטנים (טלפונים, מתחת ל-768px) */
+       /* רספונסיביות עבור מסכים קטנים (טלפונים, מתחת ל-768px) */
 @media screen and (max-width: 768px) {
     header {
         padding: 10px 20px; /* פחות שוליים בטלפון */
@@ -300,17 +300,27 @@
         padding: 15px; /* פחות שוליים בטלפון */
         font-size: 14px; /* טקסט קטן יותר בטלפון */
     }
+
+    /* כפתור צור קשר בסגנון כדור כדורגל בטלפון */
+    .cta-button {
+        margin-right: 0; /* בטל רווח בטלפון */
+        margin-bottom: 15px; /* רווח מתחת לכפתור בטלפון */
+        width: 50px; /* כדור קטן יותר בטלפון */
+        height: 50px;
+    }
+
+    .cta-button span {
+        font-size: 10px; /* טקסט קטן יותר בטלפון */
+    }
 }
 
 /* רספונסיביות עבור מסכים בינוניים (טאבלטים, 768px-1024px) */
-@media screen and (max-width: 768px) {
-    .floating-img {
-        display: block; /* הצג תמונות */
-        width: 150px; /* הקטן אותן */
-        top: 10px; /* או bottom, left, right לפי הצורך */
-        right: 10px; /* דוגמה, התאם לפי העיצוב */
+@media screen and (max-width: 1024px) {
+    section {
+        max-width: 90%; /* רוחב קצת צר יותר בטאבלטים */
+        padding: 100px 30px 50px;
     }
-    
+
     .floating-img {
         width: 200px; /* תמונות קטנות יותר בטאבלטים */
     }
@@ -318,20 +328,65 @@
     .founder-card {
         width: 45%; /* כרטיסיות קצת צרות יותר בטאבלטים */
     }
-.cta-button {
-    display: inline-block;
-    padding: 12px 24px;
-    background: #1e40af;
-    color: #fff;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 500;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s ease, transform 0.3s ease;
 }
-.cta-button:hover {
-    background: #3b82f6;
-    transform: translateY(-2px);
+
+/* כפתור צור קשר בסגנון כדור כדורגל בדסקטופ */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background: #1e60af; /* כחול כהה */
+    color: #fff;
+    border-radius: 70%; /* עיצוב כדורי כמו כדור כדורגל */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    width: 70px; /* רוחב קבוע כמו כדור */
+    height: 70px; /* גובה קבוע כמו כדור */
+    margin-right: 20px; /* רווח מהטקסט בצד ימין (ב-RTL) */
+    text-align: center; /* מרכוז טקסט */
+    overflow: hidden; /* לוודא שהטקסט לא יצא מהכדור */
+    white-space: nowrap; /* למנוע שבירת שורות */
+}
+
+/* סימולציה של כדור כדורגל עם דוגמת משושים (אפשרות מתקדמת) */
+.cta-button::before {
+    content: '';
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    background: radial-gradient(circle, #1e40af 0%, #3b82f6 70%, #1e40af 100%);
+    border-radius: 80%;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+/* טקסט הכפתור עם גודל מותאם לכדור */
+.cta-button span {
+    position: relative;
+    z-index: 1;
+    font-size: 10px; /* הקטן את הטקסט כדי שיתאים לכדור */
+    line-height: 2;
+}
+
+/* מבנה התוכן ב-#contact */
+.contact-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-direction: row-reverse; /* עבור RTL, שם הכפתור יהיה בצד שמאל */
+}
+
+.contact-text {
+    flex: 1; /* נותן לטקסט את הרוב המוחלט של הרוחב */
+}
+
+/* הסתרת/הצגת ה-header בעת גלילה */
+header {
+    transition: transform 0.3s ease; /* אנימציה חלקה */
 }
     </style>
 </head>
@@ -407,10 +462,11 @@
 
     <section id="contact">
         <h2>צור קשר</h2>
-        <p>רוצים להצטרף למסע שלנו, לשתף פעולה, או פשוט ללמוד עוד על הפעילות שלנו? אנחנו כאן בשבילכם – בואו לשנות!</p>
-        <p>מייל: <a href="mailto:office@élite-cic.com">office@élite-cic.com</a></p>
-        <a href="mailto:office@élite-cic.com" class="cta-button">צור קשר עכשיו</a>
-        
+           <div class="contact-content">
+<a href="mailto:office@élite-cic.com" class="cta-button"><span>צור קשר עכשיו</span></a>
+        <div class="contact-text">
+<p>רוצים להצטרף למסע שלנו, לשתף פעולה, או פשוט ללמוד עוד על הפעילות שלנו? אנחנו כאן בשבילכם – בואו לשנות!</p>       
+            <p>מייל: <a href="mailto:office@élite-cic.com">office@élite-cic.com</a></p>
         <ul>
             <li>יקיר רפאל: <a href="mailto:yakiraphael@elite-cic.com">yakiraphael@elite-cic.com</a></li>
             <li>נאור שיר: <a href="mailto:naor@elite-cic.com">naor@elite-cic.com</a></li>
@@ -426,6 +482,20 @@
             var nav = document.getElementById("nav");
             nav.classList.toggle("open");
         }
+// פונקציה להסתרת/הצגת ה-header בעת גלילה
+let lastScroll = 0;
+window.addEventListener('scroll', function() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (currentScroll > lastScroll && currentScroll > 50) {
+        // גלילה למטה והגענו מעבר ל-50px - הסתר את ה-header
+        document.querySelector('header').style.transform = 'translateY(-100%)';
+    } else {
+        // גלילה למעלה או בתחילת הדף - הצג את ה-header
+        document.querySelector('header').style.transform = 'translateY(0)';
+    }
+    lastScroll = currentScroll;
+});
     </script>
 </body>
 </html>
