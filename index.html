@@ -303,12 +303,14 @@
 }
 
 /* רספונסיביות עבור מסכים בינוניים (טאבלטים, 768px-1024px) */
-@media screen and (max-width: 1024px) {
-    section {
-        max-width: 90%; /* רוחב קצת צר יותר בטאבלטים */
-        padding: 100px 30px 50px;
+@media screen and (max-width: 768px) {
+    .floating-img {
+        display: block; /* הצג תמונות */
+        width: 150px; /* הקטן אותן */
+        top: 10px; /* או bottom, left, right לפי הצורך */
+        right: 10px; /* דוגמה, התאם לפי העיצוב */
     }
-
+    
     .floating-img {
         width: 200px; /* תמונות קטנות יותר בטאבלטים */
     }
@@ -316,6 +318,20 @@
     .founder-card {
         width: 45%; /* כרטיסיות קצת צרות יותר בטאבלטים */
     }
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #1e40af;
+    color: #fff;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+.cta-button:hover {
+    background: #3b82f6;
+    transform: translateY(-2px);
 }
     </style>
 </head>
@@ -393,6 +409,7 @@
         <h2>צור קשר</h2>
         <p>רוצים להצטרף למסע שלנו, לשתף פעולה, או פשוט ללמוד עוד על הפעילות שלנו? אנחנו כאן בשבילכם – בואו לשנות!</p>
         <p>מייל: <a href="mailto:office@élite-cic.com">office@élite-cic.com</a></p>
+        <a href="mailto:office@élite-cic.com" class="cta-button">צור קשר עכשיו</a>
         
         <ul>
             <li>יקיר רפאל: <a href="mailto:yakiraphael@elite-cic.com">yakiraphael@elite-cic.com</a></li>
