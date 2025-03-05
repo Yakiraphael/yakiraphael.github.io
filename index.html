@@ -148,6 +148,38 @@ header {
             color: #4a5568;
             margin-bottom: 20px;
         }
+        
+    #data-graph {
+    text-align: center;
+    padding: 40px;
+    background: #f1f5f9;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.graph-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 300px;
+    margin-top: 20px;
+}
+
+.bar {
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    width: 20%;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.bar:hover {
+    transform: scale(1.1);
+}
 
         /* תמונות צפות */
      .floating-img {
@@ -237,6 +269,7 @@ header {
         #process { background: linear-gradient(135deg, #ffebee, #fff); }
         #unique { background: linear-gradient(135deg, #f1f8e9, #fff); }
         #youth-risk { background: linear-gradient(135deg, #f3e5f5, #fff); }
+        #data { background: linear-gradient(135deg, #fff3e0, #fff); }
         #founders { background: linear-gradient(135deg, #e8f5e9, #fff); }
         #contact { background: linear-gradient(135deg, #edf2f7, #fff); }
 
@@ -436,6 +469,7 @@ header {
             <li><a href="#process">הדרך שלנו</a></li>
             <li><a href="#unique">מה מיוחד בנו</a></li>
             <li><a href="#youth-risk">על סיכון בנוער</a></li>
+             <li><a href="#data">נתונים</a></li>
             <li><a href="#founders">המייסדים</a></li>
             <li><a href="#contact">צרו קשר</a></li>
         </ul>
@@ -474,6 +508,16 @@ header {
         <p>סיכון בנוער קיים בכל שכבת גיל, ללא הבדל מגדר, מין, מגזר, מצב סוציו-אקונומי (נמוך או גבוה), מקום מגורים, פריפריה, עיירת פיתוח, או צבע עור. הנער או הנערה עשויים לגדול בבית מבוסס שבו השקיעו בחינוך אך לא סיפקו אהבה או תמיכה רגשית מספיקים, או שהחונכו לעצמאות יתר מבלי ללמוד לבקש עזרה. מצד שני, הם עשויים לגדול בסביבה לא בטוחה, להיפגע, להינצל על ידי הוריהם, לגדול לאורח חיים שסוטה מהנורמה, או לא לסיים לימודים ולנשור מממערכת החינוך – כל אלו נכללים במושג "נוער בסיכון".</p>
         <p>עפ"י נתונים סטטיסטיים, יש כ-250,000 נערים ונערות בסיכון בישראל – מספר מדאיג שמצביע על משבר לאומי. עם זאת, אנחנו מאמינים ש"הסטטיסטיקה משקרת" – צורת ההסתכלות והטיפול הנוכחית אינה נכונה ואינה מכילה את הכמות הזו. בעוד רשות חסות הנוער מטפלת בכ-1,050 נערים ונערות בשנה בלבד, אנחנו שואפים להרחיב את ההשפעה באמצעות גישה חדשנית שמשלבת כדורגל, חינוך, ותמיכה, כדי להציל ולהעצים דור שלם.</p>
     </section>
+
+<section id="data">
+    <h2>קצת נתונים..</h2>
+    <div class="graph-container">
+        <div class="bar" style="height: 70%;">250,000 נוער בסיכון</div>
+        <div class="bar" style="height: 50%;">100 ארגונים מטפלים</div>
+        <div class="bar" style="height: 30%;">30% גידול בצורך</div>
+        <div class="bar" style="height: 20%;">20% תמיכות ממשלתיות</div>
+    </div>
+</section>
 
   <section id="founders">
     <h2>המייסדים</h2>
