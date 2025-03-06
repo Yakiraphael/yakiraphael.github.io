@@ -239,7 +239,9 @@ header {
         #unique { background: linear-gradient(135deg, #f1f8e9, #fff); }
         #youth-risk { background: linear-gradient(135deg, #f3e5f5, #fff); }
         #data { background: linear-gradient(135deg, #fff3e0, #fff); }
+        #milestones { background: linear-gradient(135deg, #fff3e0, #fff); }
         #founders { background: linear-gradient(135deg, #e8f5e9, #fff); }
+        #registration { background: linear-gradient(135deg, #e0f7fa, #fff); }
         #contact { background: linear-gradient(135deg, #edf2f7, #fff); }
 
         a {
@@ -259,6 +261,126 @@ header {
             color: #48bb78;
             font-size: 16px;
         }
+        #registration {
+    padding: 120px 40px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: right;
+    background: linear-gradient(135deg, #edf2f7, #fff);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+#registration:hover {
+    transform: translateY(-5px);
+}
+
+.forms-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.form-section {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    min-width: 300px;
+}
+
+.form-section h3 {
+    font-size: 24px;
+    color: #1e40af;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 16px;
+    color: #4a5568;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+button.cta-button {
+    margin-top: 15px;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+}
+        
+#milestones {
+    padding: 120px 40px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: right;
+    background: linear-gradient(135deg, #f1f8e9, #fff);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+#milestones:hover {
+    transform: translateY(-5px);
+}
+
+.milestones-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.milestone-card {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    min-width: 300px;
+}
+
+.milestone-card h3 {
+    font-size: 22px;
+    color: #1e40af;
+    margin-bottom: 10px;
+}
+
+.milestone-date {
+    font-size: 16px;
+    color: #4a5568;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.milestone-card p {
+    font-size: 16px;
+    color: #4a5568;
+    line-height: 1.6;
+}
+        
        /* רספונסיביות עבור מסכים קטנים (טלפונים, מתחת ל-768px) */
 @media screen and (max-width: 768px) {
     header {
@@ -351,6 +473,67 @@ header {
     footer {
         padding: 15px; /* פחות שוליים בטלפון */
         font-size: 14px; /* טקסט קטן יותר בטלפון */
+    }
+}
+        
+          #registration {
+        padding: 80px 20px 40px;
+        max-width: 100%;
+    }
+
+    .forms-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-section {
+        padding: 15px;
+        min-width: 100%;
+    }
+
+    .form-section h3 {
+        font-size: 20px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    button.cta-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .cta-button span {
+        font-size: 9px;
+        line-height: 1.2;
+    }
+}
+        #milestones {
+        padding: 80px 20px 40px;
+        max-width: 100%;
+    }
+
+    .milestones-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .milestone-card {
+        padding: 15px;
+        min-width: 100%;
+    }
+
+    .milestone-card h3 {
+        font-size: 20px;
+    }
+
+    .milestone-date {
+        font-size: 14px;
+    }
+
+    .milestone-card p {
+        font-size: 14px;
     }
 }
 
@@ -446,13 +629,14 @@ header {
 </header>
     <nav id="nav">
         <ul>
-            <li><a href="#about">מי אנחנו</a></li>
+            <li><a href="#about">?מי אנחנו</a></li>
             <li><a href="#mission">המשימה שלנו</a></li>
             <li><a href="#process">הדרך שלנו</a></li>
-            <li><a href="#unique">מה מיוחד בנו</a></li>
-            <li><a href="#youth-risk">על סיכון בנוער</a></li>
+            <li><a href="#unique">?מה מיוחד בנו</a></li>
+            <li><a href="#youth-risk">על סיכון בנוער</a></li> 
+            <li><a href="#milestones">אבני דרך</a></li>
             <li><a href="#founders">המייסדים</a></li>
-            <li><a href="#contact">צרו קשר</a></li>
+            <li><a href="#registration">צרו קשר</a></li>
         </ul>
     </nav>
 
@@ -491,6 +675,27 @@ header {
         <p>עפ"י נתונים סטטיסטיים, יש כ-250,000 נערים ונערות בסיכון בישראל – מספר מדאיג שמצביע על משבר לאומי. עם זאת, אנחנו מאמינים ש"הסטטיסטיקה משקרת" – צורת ההסתכלות והטיפול הנוכחית אינה נכונה ואינה מכילה את הכמות הזו. בעוד רשות חסות הנוער מטפלת בכ-1,050 נערים ונערות בשנה בלבד, אנחנו שואפים להרחיב את ההשפעה באמצעות גישה חדשנית שמשלבת כדורגל, חינוך, ותמיכה, כדי לשנות ולהעצים דורות שלמים.</p>
     </section>
 
+    <section id="milestones">
+    <h2>אבני דרך</h2>
+    <div class="milestones-container">
+        <div class="milestone-card">
+            <h3>קבוצת בוגרים בליגה ג'</h3>
+            <p class="milestone-date">תאריך יעד: אוגוסט 2025 או תאריך פתיחת עונה רשמית</p>
+            <p>בשלב זה, אנו מתכננים להקים קבוצת בוגרים שתשתתף בליגה ג', מה שיאפשר לבוגרים שלנו להתקדם לתחרויות ברמה גבוהה יותר ולפתח את כישוריהם האפשריים בכדורגל גם אחרי שסיימו תהליך כבוגרי “עילית הנוער”. צעד שיוצר להם נתיב לחיים ופיתוח הקריירה המקצועית.</p>
+        </div>
+        <div class="milestone-card">
+            <h3>ליגת "עילית" לכדורגל טיפולי-חינוכי</h3>
+            <p class="milestone-date">תאריך יעד: אוקטובר 2025</p>
+            <p>בשלב זה, נקים ליגת "עילית" ראשונה מסוגה לכדורגל טיפולי-חינוכי עבור כפרי הנוער בישראל. הליגה תספק מסגרת תחרותית שתשפר את המיומנויות החברתיות, הקבוצתיות והספורטיביות של המשתתפים. במקביל, במהלך העונה עצמה שחקני הקבוצות יעברו תכנים בפיתוח מנטלי, יזמות עסקית/חברתית, ניהול פיננסי, השקעות ושוק ההון, מנהיגות, מו”מ, שפת גוף ועמידה מול קהל.</p>
+        </div>
+        <div class="milestone-card">
+            <h3>מעבר לתוכנית 3 שנים</h3>
+            <p class="milestone-date">תאריך יעד: ינואר 2026</p>
+            <p>בשלב זה, נעבור לתוכנית ארוכת טווח של 3 שנים, שתכלול פיתוח מתודולוגיות חדשות, שיפור התכנים, הכשרה מקצועית למאמנים ותמיכה מתמשכת בבוגרים ובנערים המשתתפים בפרויקט. במקביל, הארגון ייפתח אפליקציית Flutter פנים ארגונית לניהול כללי וניהול משתמשים חיצוני.</p>
+        </div>
+    </div>
+</section>
+    
   <section id="founders">
     <h2>המייסדים</h2>
     <div class="founders-container">
@@ -507,6 +712,54 @@ header {
     </div>
 </section>
 
+    <section id="registration">
+    <h2>השארת פרטים</h2>
+    <div class="forms-container">
+        <!-- טופס 1: רישום לליגת "עילית" לכפרי נוער -->
+        <div class="form-section">
+            <h3>רישום לליגת "עילית" לכפרי נוער</h3>
+            <form action="#" method="POST">
+                <label for="full-name">שם מלא *</label>
+                <input type="text" id="full-name" name="full-name" required>
+
+                <label for="phone">טלפון *</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">מייל (לא חובה)</label>
+                <input type="email" id="email" name="email">
+
+                <label for="youth-village">שם ומקום כפר נוער *</label>
+                <input type="text" id="youth-village" name="youth-village" required>
+
+                <label for="role">תפקיד *</label>
+                <input type="text" id="role" name="role" required>
+
+                <button type="submit" class="cta-button"><span>שלח</span></button>
+            </form>
+        </div>
+
+        <!-- טופס 2: תמיכה בפרויקט -->
+        <div class="form-section">
+            <h3>יצירת קשר לתמיכה בפרויקט</h3>
+            <form action="#" method="POST">
+                <label for="fund-name">שם הקרן/ארגון *</label>
+                <input type="text" id="fund-name" name="fund-name" required>
+
+                <label for="contact-person">שם נציג *</label>
+                <input type="text" id="contact-person" name="contact-person" required>
+
+                <label for="fund-email">מייל *</label>
+                <input type="email" id="fund-email" name="fund-email" required>
+
+                <label for="fund-phone">טלפון *</label>
+                <input type="tel" id="fund-phone" name="fund-phone" required>
+
+                <button type="submit" class="cta-button"><span>שלח</span></button>
+            </form>
+        </div>
+    </div>
+</section>
+    
     <section id="contact">
         <h2>צרו קשר</h2>
            <div class="contact-content">
