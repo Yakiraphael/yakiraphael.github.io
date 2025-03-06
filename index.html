@@ -324,8 +324,8 @@ input {
 
 button.cta-button {
     margin-top: 15px;
-    width: 20px;
-    height: 20px;
+    width: 40px; /* שנה מ-20px ל-40px */
+    height: 40px; /* שנה מ-20px ל-40px */
     padding: 0;
 }
         
@@ -504,11 +504,11 @@ button.cta-button {
         height: 50px;
     }
 
-    .cta-button span {
-        font-size: 9px;
-        line-height: 1.2;
-    }
+   button.cta-button span {
+    font-size: 10px; /* הקטן את הטקסט כדי שיתאים ל-40px */
+    line-height: 1.2; /* מרכוז אנכי טוב יותר */
 }
+        
         #milestones {
         padding: 80px 20px 40px;
         max-width: 100%;
@@ -717,7 +717,7 @@ header {
     <div class="forms-container">
         <!-- טופס 1: רישום לליגת "עילית" לכפרי נוער -->
         <div class="form-section">
-            <h3>בירור לרישום לליגת "עילית" לכפרי נוער</h3>
+            <h3>רישום ובירור לליגת "עילית" לכפרי נוער</h3>
             <form action="#" method="POST">
                 <label for="full-name">שם מלא *</label>
                 <input type="text" id="full-name" name="full-name" required>
