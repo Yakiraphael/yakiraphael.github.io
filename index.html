@@ -304,7 +304,6 @@ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-}
 
 label {
     font-size: 16px;
@@ -324,9 +323,26 @@ input {
 
 button.cta-button {
     margin-top: 15px;
-    width: 40px; /* שנה מ-20px ל-40px */
-    height: 40px; /* שנה מ-20px ל-40px */
+    width: 40px;
+    height: 40px;
     padding: 0;
+}  
+    
+.submit-text {
+    display: inline-block;
+    background-color: #1e60af; /* אותו צבע של הכפתור הקודם */
+    color: #fff; /* טקסט לבן לניגודיות */
+    padding: 10px 20px; /* מרווחים פנימיים */
+    border-radius: 50px; /* עיגול קל, דומה לכפתור קודם */
+    font-weight: 700; /* מודגש כמו הכפתור */
+    font-size: 16px; /* גודל טקסט דומה */
+    text-align: center;
+    cursor: pointer; /* סמן יד כשמעליו */
+    transition: background-color 0.3s ease; /* אנימציה קלה */
+}
+
+.submit-text:hover {
+    background-color: #163d8b; /* צבע כהה יותר בעת hover */
 }
 
 #milestones:hover {
@@ -604,6 +620,13 @@ button.cta-button {
 header {
     transition: transform 0.3s ease; /* אנימציה חלקה */
 }
+    
+#registration {
+    .submit-text {
+        padding: 8px 15px; /* מרווחים קטנים יותר בטלפון */
+        font-size: 14px; /* טקסט קטן יותר בטלפון */
+    }
+}
     </style>
 </head>
 <body>
@@ -727,7 +750,7 @@ header {
                 <label for="inquiry-purpose">מהות הפנייה</label>
 <textarea id="inquiry-purpose" name="inquiry-purpose" rows="4" placeholder="פרט על מטרת הפנייה שלך (למשל, שאלות על הרישום או בקשות נוספות)"></textarea>
 
-                <button type="submit" class="cta-button"><span>שלח</span></button>
+<span class="submit-text">שלח</span>
             </form>
         </div>
 
@@ -750,7 +773,7 @@ header {
                 <label for="support-inquiry">מהות הפנייה</label>
 <textarea id="support-inquiry" name="support-inquiry" rows="4" placeholder="פרט על מטרת התמיכה שלך או שאלות נוספות"></textarea>
 
-                <button type="submit" class="cta-button"><span>שלח</span></button>
+<span class="submit-text">שלח</span>
             </form>
         </div>
     </div>
