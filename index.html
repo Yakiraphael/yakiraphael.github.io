@@ -357,10 +357,9 @@ button.cta-button {
 
 .milestones-container {
     display: flex;
-    justify-content: center; /* יישור למרכז */
+    justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
-    max-width: 100%;
 }
 
 .milestone-card {
@@ -368,8 +367,8 @@ button.cta-button {
     border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     padding: 20px;
-    width: calc(33.333% - 20px); /* שלוש בעמודה */
-    min-width: 280px; /* רוחב מינימלי למובייל */
+    width: calc(33.333% - 20px); /* שלושה כרטיסים בשורה בדסקטופ */
+    min-width: 280px; /* קביעת מינימום עבור מובייל */
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -396,10 +395,15 @@ button.cta-button {
     color: #4a5568;
     line-height: 1.6;
 }
-    @media screen and (max-width: 768px) {
-    .submit-text {
-        padding: 8px 15px; /* מרווחים קטנים יותר בטלפון */
-        font-size: 14px; /* טקסט קטן יותר בטלפון */
+
+/* רספונסיביות למסכים קטנים */
+@media screen and (max-width: 768px) {
+    .milestones-container {
+        flex-direction: column; /* הופך את הכרטיסיות לערימה */
+        align-items: center; /* ממרכז אותן */
+    }
+    .milestone-card {
+        width: 100%; /* כל כרטיס יקבל את כל הרוחב */
     }
 }
         
