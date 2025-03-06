@@ -802,6 +802,21 @@ header {
     var nav = document.getElementById("nav");
     nav.classList.toggle("open");
 }
+        
+// פונקציה להסתרת/הצגת ה-header בעת גלילה
+let lastScroll = 0;
+window.addEventListener('scroll', function() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (currentScroll > lastScroll && currentScroll > 50) {
+        // גלילה למטה והגענו מעבר ל-50px - הסתר את ה-header
+        document.querySelector('header').style.transform = 'translateY(-100%)';
+    } else {
+        // גלילה למעלה או בתחילת הדף - הצג את ה-header
+        document.querySelector('header').style.transform = 'translateY(0)';
+    }
+    lastScroll = currentScroll;
+});
 
 // סגירת התפריט כאשר לוחצים מחוץ לו
 document.addEventListener('click', function(event) {
