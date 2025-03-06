@@ -261,7 +261,7 @@ header {
             color: #48bb78;
             font-size: 16px;
         }
-        #registration {
+    #registration {
     padding: 120px 40px 60px;
     max-width: 1100px;
     margin: 0 auto;
@@ -345,24 +345,37 @@ button.cta-button {
     background-color: #163d8b; /* צבע כהה יותר בעת hover */
 }
 
-#milestones:hover {
-    transform: translateY(-5px);
+#milestones {
+    background: linear-gradient(135deg, #fff3e0, #fff);
+    max-width: 1100px; 
+    margin: 0 auto;
+    padding: 120px 40px 60px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
 }
 
 .milestones-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* יישור למרכז */
     gap: 30px;
     flex-wrap: wrap;
+    max-width: 100%;
 }
 
 .milestone-card {
-    flex: 1;
     background: #fff;
-    padding: 20px;
-    border-radius: 12px;
+    border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    min-width: 300px;
+    padding: 20px;
+    width: calc(33.333% - 20px); /* שלוש בעמודה */
+    min-width: 280px; /* רוחב מינימלי למובייל */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.milestone-card:hover {
+    transform: translateY(-5px);
 }
 
 .milestone-card h3 {
@@ -382,6 +395,12 @@ button.cta-button {
     font-size: 16px;
     color: #4a5568;
     line-height: 1.6;
+}
+    @media screen and (max-width: 768px) {
+    .submit-text {
+        padding: 8px 15px; /* מרווחים קטנים יותר בטלפון */
+        font-size: 14px; /* טקסט קטן יותר בטלפון */
+    }
 }
         
        /* רספונסיביות עבור מסכים קטנים (טלפונים, מתחת ל-768px) */
