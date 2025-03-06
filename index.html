@@ -19,67 +19,73 @@
             overflow-x: hidden;
         }
 
-      header {
+header {
     position: sticky;
     top: 0;
     width: 100%;
     background: linear-gradient(135deg, #1e40af, #3b82f6);
     padding: 15px 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* מרכוז התוכן */
     align-items: center;
     z-index: 1000;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease; /* אנימציה לגלילה */
+    transition: transform 0.3s ease;
 }
 
 .header-content {
     display: flex;
     align-items: center;
-    gap: 20px;
+    text-align: center; /* מרכוז הטקסט */
 }
+
+.header-content img {
+    width: 110px;
+    margin-right: 10px; /* מרווח קטן בין הלוגו לשם */
+}
+
 .header-title {
-    text-align: center;
-    color: #fff;
-    font-size: 24px;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* אפקט צל */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* מרכוז השם */
 }
 
-.english-name {
+.header-title .english-name {
+    font-size: 20px;
     color: #add8e6;
+    font-weight: 700;
 }
 
-.hebrew-name {
-    color: #e8f5e9; 
+.header-title .hebrew-name {
+    font-size: 16px;
+    color: #e8f5e9;
 }
-
 
 nav {
     position: sticky;
-    top: 60px; /* מתחת ל-header (לוקח בחשבון את הגובה שלו) */
+    top: 60px; /* מתחת ל-header בדסקטופ */
     width: 100%;
-    background: linear-gradient(135deg, #1e40af, #3b82f6); /* מתאים לצבע ה-header */
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
     display: flex;
-    justify-content: flex-end; /* כיוון מימין לשמאל */
+    justify-content: flex-end;
     align-items: center;
     z-index: 999;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 10px 40px;
-    transition: transform 0.3s ease; /* אנימציה לגלילה */
+    transition: transform 0.3s ease;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px; /* מרווח בין האפשרויות */
+    gap: 20px;
     padding: 0;
     width: auto;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #fff; /* טקסט לבן להתאמה לרקע */
+    color: #fff;
     font-size: 18px;
     padding: 10px 15px;
     display: block;
@@ -87,7 +93,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: #163d8b; /* צבע כהה יותר בעת hover */
+    background: #163d8b;
     color: #e2e8f0;
     border-radius: 5px;
 }
@@ -95,23 +101,6 @@ nav ul li a:hover {
 /* הסתרת התפריט בעת גלילה למטה */
 nav.hidden {
     transform: translateY(-100%);
-}
-
-/* התאמות לטלפונים (מתחת ל-768px) */
-@media screen and (max-width: 768px) {
-    nav {
-        top: 50px; /* מתאים לגובה ה-header בטלפונים */
-        padding: 5px 20px;
-    }
-
-    nav ul {
-        gap: 10px;
-    }
-
-    nav ul li a {
-        font-size: 16px;
-        padding: 5px 10px;
-    }
 }
 
         section {
@@ -374,19 +363,20 @@ button.cta-button {
 
 .milestone-card {
     background: #fff;
-    border: none; /* הסר את המסגרת */
+    border: none; /* ללא מסגרת */
     border-radius: 16px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* צל קל כגבול */
-    padding: 20px;
-    width: calc(33.333% - 20px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* צל חזק יותר לתיחום ברור */
+    padding: 25px; /* הגדל את הפדים ל-25px לרווח נוסף */
+    width: calc(33.333% - 20px); /* שלושה בעמודה */
     min-width: 280px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 5px; /* רווח חיצוני קטן סביב הכרטיס */
 }
 
 .milestone-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* צל חזק יותר בה Hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* צל חזק יותר בה Hover */
 }
 
 .milestone-card h3 {
@@ -410,31 +400,63 @@ button.cta-button {
         
        /* רספונסיביות עבור מסכים קטנים (טלפונים, מתחת ל-768px) */
 @media screen and (max-width: 768px) {
-    header {
-        padding: 10px 20px; /* פחות שוליים בטלפון */
+  header {
+        padding: 10px 20px;
+        justify-content: space-between; /* מרווח בין הכפתור לתוכן */
     }
 
-    .header-title {
-        font-size: 18px; /* טקסט קטן יותר בטלפון */
+    .header-content {
+        flex-direction: column; /* ערום אנכית בטלפונים */
+        text-align: center;
     }
 
+    .header-content img {
+        margin-right: 0;
+        margin-bottom: 5px; /* מרווח בין הלוגו לשם בטלפונים */
+    }
 
-      nav {
-        width: 70%; /* התאמת רוחב לטלפונים */
-        right: -70vw; /* הסתרה מחוץ למסך */
+    .menu-button {
+        right: 10px;
+    }
+}
+    nav {
+        position: fixed;
+        top: 0;
+        right: -80%; /* הקטנתי מ-100% ל-80% למראה חלק יותר */
+        width: 80%; /* רוחב התפריט בטלפונים */
+        height: 100%;
+        background: #1a202c;
+        flex-direction: column;
+        align-items: center;
+        transition: right 0.3s ease; /* האצתי את האנימציה ל-0.3s */
+        z-index: 999;
+        box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+        overflow-y: auto;
+        padding: 20px 0;
+        display: none;
     }
 
     nav.open {
         right: 0;
+        display: flex;
     }
 
     nav ul {
-        padding: 120px 0 40px; /* הקטנת מרווח עליון בטלפונים */
+        flex-direction: column;
+        gap: 10px;
+        padding: 120px 0 40px;
+        width: 100%;
     }
 
     nav ul li a {
-        font-size: 16px; /* טקסט קטן יותר בטלפונים */
+        font-size: 16px;
         padding: 10px 20px;
+        color: #e2e8f0;
+    }
+
+    nav ul li a:hover {
+        background: #4a5568;
+        color: #fff;
     }
 }
 
@@ -490,19 +512,19 @@ button.cta-button {
         }
     }
 
-    /* כפתור צור קשר בסגנון כדור כדורגל בטלפון */
     .cta-button {
-        margin-right: 0; /* בטל רווח בטלפון */
-        margin-bottom: 15px; /* רווח מתחת לכפתור בטלפון */
-        width: 60px; /* כדור קטן יותר בטלפון */
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 60px;
         height: 60px;
-        padding: 0; /* בטל padding כדי שהטקסט יתאים */
+        padding: 0;
     }
 
     .cta-button span {
-        font-size: 10px; /* טקסט קטן יותר בטלפון, מתאים לכדור */
-        line-height: 1; /* מרכוז אנכי טוב יותר */
+        font-size: 10px;
+        line-height: 1;
     }
+}
 
     footer {
         padding: 15px; /* פחות שוליים בטלפון */
@@ -552,7 +574,7 @@ button.cta-button {
     }
 }
         
-   #milestones {
+ #milestones {
         padding: 80px 20px 40px;
         max-width: 100%;
     }
@@ -562,11 +584,16 @@ button.cta-button {
         align-items: center;
     }
 
-   .milestone-card {
+    .milestone-card {
         width: 100%;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* צל קל יותר בטלפונים */
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12); /* צל מעט קל יותר בטלפונים */
+        padding: 20px; /* הקטן מעט את הפדים בטלפונים */
+        margin: 5px; /* שמור על רווח חיצוני */
     }
-}
+
+    .milestone-card:hover {
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* צל חזק יותר בה Hover */
+    }
 
     .milestone-card h3 {
         font-size: 20px;
@@ -580,6 +607,7 @@ button.cta-button {
         font-size: 14px;
     }
 }
+
 /* רספונסיביות עבור מסכים בינוניים (טאבלטים, 768px-1024px) */
 @media screen and (max-width: 1024px) {
     section {
@@ -609,34 +637,40 @@ button.cta-button {
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
-/* סימולציה של כדור כדורגל עם דוגמת משושים (אפשרות מתקדמת) */
+
+/* הסר את ה-::before שגרם לרקע כחול מעל הטקסט */
 .cta-button::before {
-    content: '';
-    position: absolute;
-    width: 10%;
-    height: 10%;
-    background: radial-gradient(circle, #1e40af 0%, #3b82f6 70%, #1e40af 100%);
-    border-radius: 80%;
-    z-index: 0;
-    opacity: 0.8;
+    display: none; /* הסר את האפקט הזה */
 }
-        
+
 .cta-button:hover {
     background: #163d8b;
     transform: scale(1.05);
 }
 
-/* מבנה התוכן ב-#contact */
-.contact-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    flex-direction: row-reverse; /* עבור RTL, שם הכפתור יהיה בצד שמאל */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background: #1e60af; /* רקע כחול */
+    color: #fff; /* טקסט לבן */
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    position: relative; /* כדי להסיר את ה-::before */
+    z-index: 1; /* ודא שהטקסט מעל כל שכבה */
 }
 
-.contact-text {
-    flex: 1; /* נותן לטקסט את הרוב המוחלט של הרוחב */
-}
+
+
+/* מבנה התוכן ב-#contact */
+   .contact-content {
+        flex-direction: column; /* ערום בעמודה בטלפונים */
+        align-items: center;
+        text-align: right;
+    }
 
 /* הסתרת/הצגת ה-header בעת גלילה */
 header {
@@ -797,7 +831,6 @@ header {
     <section id="contact">
         <h2>צרו קשר</h2>
            <div class="contact-content">
-<a href="mailto:office@élite-cic.com" class="cta-button"><span>צור קשר עכשיו</span></a>
         <div class="contact-text">
 <p>רוצים להצטרף למסע שלנו, לשתף פעולה, או פשוט ללמוד עוד על הפעילות שלנו? אנחנו כאן בשבילכם – בואו לשנות!</p>       
             <p>מייל משרד: <a href="mailto:office@élite-cic.com">office@élite-cic.com</a></p>
@@ -807,6 +840,9 @@ header {
         </ul>
          <p>    
         <p>כתובת: משעול הורד 29, קריית גת (משרד רשום)</p>
+</div>
+        <a href="mailto:office@élite-cic.com" class="cta-button"><span>צור קשר עכשיו</span></a>
+    </div>
     </section>
 
     <footer>
