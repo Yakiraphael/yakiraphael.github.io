@@ -161,20 +161,22 @@ header {
 .graph-container {
     display: flex;
     justify-content: space-around;
-    align-items: center; /* Align horizontally */
-    height: auto; /* Adjust height as needed */
+    align-items: center;
+    height: auto;
     margin-top: 20px;
+    flex-wrap: wrap; /* Allows wrapping for better responsiveness */
 }
 
 .bar {
-    background: linear-gradient(135deg, #1e40af, #3b82f6);
-    height: 20%; /* Adjust height as needed */
     color: white;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease;
+    border-radius: 16px; /* Rounded corners */
+    padding: 10px; /* Adds padding for better look */
+    margin: 10px; /* Adds margin between bars */
 }
 
 .bar:hover {
@@ -332,7 +334,7 @@ header {
     }
 }
 
-    .graph-container {
+       .graph-container {
         flex-direction: column;
         align-items: flex-start;
     }
