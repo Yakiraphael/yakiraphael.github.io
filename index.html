@@ -110,18 +110,19 @@ header {
             color: #fff;
         }
 
-             section {
-            padding: 120px 40px 60px;
-            max-width: 1100px;
-            margin: 0 auto;
-            text-align: right;
-            border-radius: 16px;
-            background: #fff;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-            transition: transform 0.3s ease;
-            position: relative;
-        }
+        section {
+    padding: 120px 40px 60px;
+    max-width: 1100px; 
+    margin: 0 auto;
+    text-align: right;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+        
         section:hover {
             transform: translateY(-5px);
         }
@@ -190,21 +191,23 @@ header {
         #founders h2 {
             margin-bottom: 50px; /* המרווח הגדול יותר שהוספנו קודם */
         }
-        .founders-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-        .founder-card {
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            padding: 20px;
-            width: 48%;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
+        
+       .founders-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.founder-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    width: calc(50% - 15px);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
         .founder-card:hover {
             transform: translateY(-5px);
         }
@@ -261,6 +264,7 @@ header {
             color: #48bb78;
             font-size: 16px;
         }
+        
     #registration {
     padding: 120px 40px 60px;
     max-width: 1100px;
@@ -345,16 +349,6 @@ button.cta-button {
     background-color: #163d8b; /* צבע כהה יותר בעת hover */
 }
 
-#milestones {
-    background: linear-gradient(135deg, #fff3e0, #fff);
-    max-width: 1100px; 
-    margin: 0 auto;
-    padding: 120px 40px 60px;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-}
-
 .milestones-container {
     display: flex;
     justify-content: center;
@@ -367,8 +361,8 @@ button.cta-button {
     border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     padding: 20px;
-    width: calc(33.333% - 20px); /* שלושה כרטיסים בשורה בדסקטופ */
-    min-width: 280px; /* קביעת מינימום עבור מובייל */
+    width: calc(33.333% - 20px); /* שלושה בעמודה */
+    min-width: 280px;
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -398,12 +392,12 @@ button.cta-button {
 
 /* רספונסיביות למסכים קטנים */
 @media screen and (max-width: 768px) {
-    .milestones-container {
-        flex-direction: column; /* הופך את הכרטיסיות לערימה */
-        align-items: center; /* ממרכז אותן */
+   .milestones-container {
+        flex-direction: column;
+        align-items: center;
     }
     .milestone-card {
-        width: 100%; /* כל כרטיס יקבל את כל הרוחב */
+        width: 100%;
     }
 }
         
@@ -502,7 +496,7 @@ button.cta-button {
     }
 }
         
-          #registration {
+    #registration {
         padding: 80px 20px 40px;
         max-width: 100%;
     }
@@ -585,26 +579,17 @@ button.cta-button {
     zoom: 0.9; /* מקטין את כל התוכן ב-20% */
 }
 
-/* כפתור צור קשר בסגנון כדור כדורגל בדסקטופ */
 .cta-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 24px;
-    background: #1e60af; /* כחול כהה */
+    padding: 10px 20px;
+    background: #1e60af;
     color: #fff;
-    border-radius: 70%; /* עיצוב כדורי כמו כדור כדורגל */
-    text-decoration: none;
+    border-radius: 50px;
     font-weight: 700;
-    font-size: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    width: 70px; /* רוחב קבוע כמו כדור */
-    height: 70px; /* גובה קבוע כמו כדור */
-    margin-right: 20px; /* רווח מהטקסט בצד ימין (ב-RTL) */
-    text-align: center; /* מרכוז טקסט */
-    overflow: hidden; /* לוודא שהטקסט לא יצא מהכדור */
-    white-space: nowrap; /* למנוע שבירת שורות */
+    font-size: 14px;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 /* סימולציה של כדור כדורגל עם דוגמת משושים (אפשרות מתקדמת) */
@@ -618,13 +603,10 @@ button.cta-button {
     z-index: 0;
     opacity: 0.8;
 }
-
-/* טקסט הכפתור עם גודל מותאם לכדור */
-.cta-button span {
-    position: relative;
-    z-index: 1;
-    font-size: 10px; /* הקטן את הטקסט כדי שיתאים לכדור */
-    line-height: 2;
+        
+.cta-button:hover {
+    background: #163d8b;
+    transform: scale(1.05);
 }
 
 /* מבנה התוכן ב-#contact */
@@ -815,31 +797,17 @@ header {
         <p>© 2025 עילית נוער ישראלית (חל"צ). כל הזכויות שמורות.</p>
     </footer>
     <script>
-       function toggleMenu() {
+    
+    function toggleMenu() {
     var nav = document.getElementById("nav");
     nav.classList.toggle("open");
 }
 
-// פונקציה להסתרת/הצגת ה-header בעת גלילה
-let lastScroll = 0;
-window.addEventListener('scroll', function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (currentScroll > lastScroll && currentScroll > 50) {
-        // גלילה למטה והגענו מעבר ל-50px - הסתר את ה-header
-        document.querySelector('header').style.transform = 'translateY(-100%)';
-    } else {
-        // גלילה למעלה או בתחילת הדף - הצג את ה-header
-        document.querySelector('header').style.transform = 'translateY(0)';
-    }
-    lastScroll = currentScroll;
-});
-
-// סגירת התפריט כשלוחצים מחוץ אליו או על האתר
+// סגירת התפריט כאשר לוחצים מחוץ לו
 document.addEventListener('click', function(event) {
     var nav = document.getElementById("nav");
     var menuButton = document.querySelector('.menu-button');
-    
+
     if (!nav.contains(event.target) && !menuButton.contains(event.target) && nav.classList.contains('open')) {
         nav.classList.remove('open');
     }
