@@ -59,18 +59,12 @@
     font-size: 28px;
     cursor: pointer;
     transition: transform 0.3s ease;
+   margin-right: auto;
 }
 .menu-button:hover {
     transform: scale(1.1);
 }
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.menu-button {
-    margin-right: auto; /* יישר את הכפתור לימין */
 }
        nav {
     position: fixed;
@@ -349,6 +343,12 @@ button.cta-button {
     background-color: #163d8b; /* צבע כהה יותר בעת hover */
 }
 
+#milestones {
+    padding: 120px 40px 60px; /* Match padding with other sections */
+    max-width: 1100px; /* Match max-width with other sections */
+    margin: 0 auto; /* Center the section */
+}
+
 .milestones-container {
     display: flex;
     justify-content: center;
@@ -389,17 +389,6 @@ button.cta-button {
     color: #4a5568;
     line-height: 1.6;
 }
-
-/* רספונסיביות למסכים קטנים */
-@media screen and (max-width: 768px) {
-   .milestones-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .milestone-card {
-        width: 100%;
-    }
-}
         
        /* רספונסיביות עבור מסכים קטנים (טלפונים, מתחת ל-768px) */
 @media screen and (max-width: 768px) {
@@ -437,11 +426,9 @@ button.cta-button {
         font-size: 16px; /* טקסט קטן יותר בטלפון */
     }
 
-    /* תמונות צפות - הקטן ומיקם בטלפון בצורה טובה */
-      .floating-img {
-        display: none !important;
+   .floating-img {
+        display: none; /* Hide floating images on mobile */
     }
-}
 
        .graph-container {
         flex-direction: column;
@@ -501,14 +488,13 @@ button.cta-button {
         max-width: 100%;
     }
 
-    .forms-container {
-        flex-direction: column;
-        gap: 20px;
+     .forms-container {
+        flex-direction: column; /* Stack forms vertically */
+        gap: 20px; /* Adjust gap for mobile */
     }
 
-    .form-section {
-        padding: 15px;
-        min-width: 100%;
+ .form-section {
+        width: 100%; /* Ensure form sections take full width */
     }
 
     .form-section h3 {
@@ -530,6 +516,12 @@ button.cta-button {
    button.cta-button span {
     font-size: 10px; /* הקטן את הטקסט כדי שיתאים ל-40px */
     line-height: 1.2; /* מרכוז אנכי טוב יותר */
+}   
+
+ .submit-text {
+        width: 100%; /* Make submit button full width */
+        padding: 10px; /* Adjust padding for better touch targets */
+    }
 }
         
         #milestones {
@@ -537,15 +529,14 @@ button.cta-button {
         max-width: 100%;
     }
 
-    .milestones-container {
+     .milestones-container {
         flex-direction: column;
-        gap: 20px;
+        align-items: center;
     }
-
     .milestone-card {
-        padding: 15px;
-        min-width: 100%;
+        width: 100%;
     }
+}
 
     .milestone-card h3 {
         font-size: 20px;
@@ -692,17 +683,17 @@ header {
     <div class="milestones-container">
         <div class="milestone-card">
             <h3>קבוצת בוגרים בליגה ג'</h3>
-            <p class="milestone-date"></strong>תאריך יעד: אוגוסט 2025 או תאריך פתיחת עונה רשמית</strong></p>
+<p class="milestone-date">תאריך יעד: אוגוסט 2025 או תאריך פתיחת עונה רשמית</p>
             <p>בשלב זה, אנו מתכננים להקים קבוצת בוגרים שתשתתף בליגה ג', מה שיאפשר לבוגרים שלנו להתקדם לתחרויות ברמה גבוהה יותר ולפתח את כישוריהם האפשריים בכדורגל גם אחרי שסיימו תהליך כבוגרי “עילית הנוער”. צעד שיוצר להם נתיב לחיים ופיתוח הקריירה המקצועית.</p>
         </div>
         <div class="milestone-card">
             <h3>ליגת "עילית" לכדורגל טיפולי-חינוכי</h3>
-            <p class="milestone-date"></strong>תאריך יעד: אוקטובר 2025</strong></p>
+<p class="milestone-date">תאריך יעד: אוקטובר 2025</p>
             <p>בשלב זה, נקים ליגת "עילית" ראשונה מסוגה לכדורגל טיפולי-חינוכי עבור כפרי הנוער בישראל. הליגה תספק מסגרת תחרותית שתשפר את המיומנויות החברתיות, הקבוצתיות והספורטיביות של המשתתפים. במקביל, במהלך העונה עצמה שחקני הקבוצות יעברו תכנים בפיתוח מנטלי, יזמות עסקית/חברתית, ניהול פיננסי, השקעות ושוק ההון, מנהיגות, מו”מ, שפת גוף ועמידה מול קהל.</p>
         </div>
         <div class="milestone-card">
             <h3>מעבר לתוכנית 3 שנים</h3>
-            <p class="milestone-date"></strong>תאריך יעד: ינואר 2026</strong></p>
+<p class="milestone-date">תאריך יעד: ינואר 2026</p>
             <p>בשלב זה, נעבור לתוכנית ארוכת טווח של 3 שנים, שתכלול פיתוח מתודולוגיות חדשות, שיפור התכנים, הכשרה מקצועית למאמנים ותמיכה מתמשכת בבוגרים ובנערים המשתתפים בפרויקט. במקביל, הארגון ייפתח אפליקציית Flutter פנים ארגונית לניהול כללי וניהול משתמשים חיצוני.</p>
         </div>
     </div>
@@ -749,7 +740,7 @@ header {
                 <label for="inquiry-purpose">מהות הפנייה</label>
 <textarea id="inquiry-purpose" name="inquiry-purpose" rows="4" placeholder="פרט על מטרת הפנייה שלך (למשל, שאלות על הרישום או בקשות נוספות)"></textarea>
 
-<span class="submit-text">שלח</span>
+<button type="submit" class="submit-text">שלח</button>
             </form>
         </div>
 
@@ -772,7 +763,7 @@ header {
                 <label for="support-inquiry">מהות הפנייה</label>
 <textarea id="support-inquiry" name="support-inquiry" rows="4" placeholder="פרט על מטרת התמיכה שלך או שאלות נוספות"></textarea>
 
-<span class="submit-text">שלח</span>
+<button type="submit" class="submit-text">שלח</button>
             </form>
         </div>
     </div>
