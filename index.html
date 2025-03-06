@@ -267,7 +267,7 @@ header {
     margin: 0 auto;
     text-align: right;
     background: linear-gradient(135deg, #edf2f7, #fff);
-    border-radius: 16px;
+    border-radius: 50%;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     margin-bottom: 30px;
     transition: transform 0.3s ease;
@@ -324,8 +324,8 @@ input {
 
 button.cta-button {
     margin-top: 15px;
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 30px;
     padding: 0;
 }
         
@@ -717,7 +717,7 @@ header {
     <div class="forms-container">
         <!-- טופס 1: רישום לליגת "עילית" לכפרי נוער -->
         <div class="form-section">
-            <h3>רישום לליגת "עילית" לכפרי נוער</h3>
+            <h3>בירור לרישום לליגת "עילית" לכפרי נוער</h3>
             <form action="#" method="POST">
                 <label for="full-name">שם מלא *</label>
                 <input type="text" id="full-name" name="full-name" required>
@@ -734,13 +734,16 @@ header {
                 <label for="role">תפקיד *</label>
                 <input type="text" id="role" name="role" required>
 
+                <label for="inquiry-purpose">מהות הפנייה</label>
+<textarea id="inquiry-purpose" name="inquiry-purpose" rows="4" placeholder="פרט על מטרת הפנייה שלך (למשל, שאלות על הרישום או בקשות נוספות)"></textarea>
+
                 <button type="submit" class="cta-button"><span>שלח</span></button>
             </form>
         </div>
 
         <!-- טופס 2: תמיכה בפרויקט -->
         <div class="form-section">
-            <h3>יצירת קשר לתמיכה בפרויקט</h3>
+            <h3>יצירת קשר לתמיכה/חסות בפרוייקט</h3>
             <form action="#" method="POST">
                 <label for="fund-name">שם הקרן/ארגון *</label>
                 <input type="text" id="fund-name" name="fund-name" required>
@@ -753,6 +756,9 @@ header {
 
                 <label for="fund-phone">טלפון *</label>
                 <input type="tel" id="fund-phone" name="fund-phone" required>
+
+                <label for="support-inquiry">מהות הפנייה</label>
+<textarea id="support-inquiry" name="support-inquiry" rows="4" placeholder="פרט על מטרת התמיכה שלך או שאלות נוספות"></textarea>
 
                 <button type="submit" class="cta-button"><span>שלח</span></button>
             </form>
