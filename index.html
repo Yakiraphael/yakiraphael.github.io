@@ -413,10 +413,11 @@ button.cta-button {
         padding: 10px 20px;
     }
 
-    section {
-        padding: 80px 20px 40px; /* פחות שוליים בטלפון */
-        max-width: 100%; /* רוחב מלא בטלפון */
+        section {
+        padding: 80px 20px 40px;
+        max-width: 100%;
     }
+}
 
     h2 {
         font-size: 24px; /* כותרת קטנה יותר בטלפון */
@@ -426,9 +427,10 @@ button.cta-button {
         font-size: 16px; /* טקסט קטן יותר בטלפון */
     }
 
-   .floating-img {
-        display: none; /* Hide floating images on mobile */
+      .floating-img {
+        display: none; 
     }
+}
 
        .graph-container {
         flex-direction: column;
@@ -519,8 +521,9 @@ button.cta-button {
 }   
 
  .submit-text {
-        width: 100%; /* Make submit button full width */
-        padding: 10px; /* Adjust padding for better touch targets */
+        width: auto; 
+        padding: 8px 15px; /* התאמה לטלפונים */
+        font-size: 14px;
     }
 }
         
@@ -565,9 +568,6 @@ button.cta-button {
     .founder-card {
         width: 45%; /* כרטיסיות קצת צרות יותר בטאבלטים */
     }
-}
-    body {
-    zoom: 0.9; /* מקטין את כל התוכן ב-20% */
 }
 
 .cta-button {
@@ -787,37 +787,54 @@ header {
     <footer>
         <p>© 2025 עילית נוער ישראלית (חל"צ). כל הזכויות שמורות.</p>
     </footer>
-    <script>
-    
+   <script>
+    // פונקציה לפתיחה/סגירה של התפריט
     function toggleMenu() {
-    var nav = document.getElementById("nav");
-    nav.classList.toggle("open");
-}
+        var nav = document.getElementById("nav");
+        nav.classList.toggle("open");
+    }
+
+    // בדיקה בטעינה ראשונית: סגירת התפריט אם פתוח
+    window.addEventListener('load', function() {
+        var nav = document.getElementById("nav");
+        if (nav.classList.contains('open')) {
+            nav.classList.remove('open');
+        }
+    });
+
+    // פונקציה להסתרת/הצגת ה-header בעת גלילה
+    let lastScroll = 0;
+    window.addEventListener('scroll', function() {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        let header = document.querySelector('header');
         
-// פונקציה להסתרת/הצגת ה-header בעת גלילה
-let lastScroll = 0;
-window.addEventListener('scroll', function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (currentScroll > lastScroll && currentScroll > 50) {
-        // גלילה למטה והגענו מעבר ל-50px - הסתר את ה-header
-        document.querySelector('header').style.transform = 'translateY(-100%)';
-    } else {
-        // גלילה למעלה או בתחילת הדף - הצג את ה-header
-        document.querySelector('header').style.transform = 'translateY(0)';
-    }
-    lastScroll = currentScroll;
-});
+        if (currentScroll > lastScroll && currentScroll > 50) {
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            header.style.transform = 'translateY(0)';
+        }
+        lastScroll = currentScroll;
+    });
 
-// סגירת התפריט כאשר לוחצים מחוץ לו
-document.addEventListener('click', function(event) {
-    var nav = document.getElementById("nav");
-    var menuButton = document.querySelector('.menu-button');
+    // סגירת התפריט בלחיצה מחוץ לו
+    document.addEventListener('click', function(event) {
+        var nav = document.getElementById("nav");
+        var menuButton = document.querySelector('.menu-button');
 
-    if (!nav.contains(event.target) && !menuButton.contains(event.target) && nav.classList.contains('open')) {
-        nav.classList.remove('open');
-    }
-});
+        if (!nav.contains(event.target) && !menuButton.contains(event.target) && nav.classList.contains('open')) {
+            nav.classList.remove('open');
+        }
+    });
+
+    // סגירת התפריט בשינוי גודל חלון מעל 768px
+    window.addEventListener('resize', function() {
+        var nav = document.getElementById("nav");
+        var windowWidth = window.innerWidth;
+
+        if (windowWidth > 768 && nav.classList.contains('open')) {
+            nav.classList.remove('open');
+        }
+    });
     </script>
 </body>
 </html>
