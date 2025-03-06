@@ -76,15 +76,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: right 0.4s ease;
+    transition: right 0.4s ease, visibility 0.4s ease, opacity 0.4s ease;
     z-index: 999;
     box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
     scroll-behavior: smooth;
+ visibility: hidden; /* מסתיר את התפריט כברירת מחדל */
+    opacity: 0; /* שקיפות כברירת מחדל */
 }
-        nav.open {
-            right: 0;
-        }
+
+    nav.open {
+    right: 0;
+    visibility: visible; /* מראה את התפריט כשפתוח */
+    opacity: 1;
+}
         
         nav ul {
     list-style: none;
@@ -404,14 +409,24 @@ button.cta-button {
         font-size: 24px; /* כפתור תפריט קטן יותר */
     }
 
-    nav {
-        width: 200px; /* תפריט צר יותר בטלפון */
+      nav {
+        width: 70%; /* התאמת רוחב לטלפונים */
+        right: -70vw; /* הסתרה מחוץ למסך */
+    }
+
+    nav.open {
+        right: 0;
+    }
+
+    nav ul {
+        padding: 120px 0 40px; /* הקטנת מרווח עליון בטלפונים */
     }
 
     nav ul li a {
-        font-size: 16px; /* טקסט קטן יותר בתפריט */
+        font-size: 16px; /* טקסט קטן יותר בטלפונים */
         padding: 10px 20px;
     }
+}
 
         section {
         padding: 80px 20px 40px;
@@ -795,12 +810,10 @@ header {
         nav.classList.toggle("open");
     }
 
-    // בדיקה בטעינה ראשונית: סגירת התפריט אם פתוח
-    window.addEventListener('load', function() {
+    // בדיקה מיידית לסגירת התפריט בטעינה
+    document.addEventListener('DOMContentLoaded', function() {
         var nav = document.getElementById("nav");
-        if (nav.classList.contains('open')) {
-            nav.classList.remove('open');
-        }
+        nav.classList.remove('open'); // תמיד מסיר את הקלאס open
     });
 
     // פונקציה להסתרת/הצגת ה-header בעת גלילה
@@ -826,6 +839,17 @@ header {
             nav.classList.remove('open');
         }
     });
+
+    // סגירת התפריט בשינוי גודל חלון מעל 768px
+    window.addEventListener('resize', function() {
+        var nav = document.getElementById("nav");
+        var windowWidth = window.innerWidth;
+
+        if (windowWidth > 768 && nav.classList.contains('open')) {
+            nav.classList.remove('open');
+        }
+    });
+</script>
 
     // סגירת התפריט בשינוי גודל חלון מעל 768px
     window.addEventListener('resize', function() {
