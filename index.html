@@ -19,7 +19,7 @@
             overflow-x: hidden;
         }
 
-        header {
+      header {
     position: sticky;
     top: 0;
     width: 100%;
@@ -30,7 +30,9 @@
     align-items: center;
     z-index: 1000;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease; /* אנימציה לגלילה */
 }
+
 .header-content {
     display: flex;
     align-items: center;
@@ -52,79 +54,64 @@
     color: #e8f5e9; 
 }
 
-.menu-button {
-    background: none;
-    border: none;
-    color: #edf2f7;
-    font-size: 28px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-   margin-right: auto;
-}
-.menu-button:hover {
-    transform: scale(1.1);
-}
 
-}
-       nav {
-    position: fixed;
-    top: 0;
-    right: -200px;
-    width: 200px;
-    height: 100%;
-    background: #1a202c;
+nav {
+    position: sticky;
+    top: 60px; /* מתחת ל-header (לוקח בחשבון את הגובה שלו) */
+    width: 100%;
+    background: linear-gradient(135deg, #1e40af, #3b82f6); /* מתאים לצבע ה-header */
     display: flex;
-    flex-direction: column;
+    justify-content: flex-end; /* כיוון מימין לשמאל */
     align-items: center;
-    transition: right 0.4s ease, visibility 0.4s ease, opacity 0.4s ease;
     z-index: 999;
-    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
-    scroll-behavior: smooth;
- visibility: hidden; /* מסתיר את התפריט כברירת מחדל */
-    opacity: 0; /* שקיפות כברירת מחדל */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 40px;
+    transition: transform 0.3s ease; /* אנימציה לגלילה */
 }
 
-    nav.open {
-    right: 0;
-    visibility: visible; /* מראה את התפריט כשפתוח */
-    opacity: 1;
-}
-        
-        nav ul {
+nav ul {
     list-style: none;
-    padding: 170px 0 60px; /* הוסף מרווח עליון של 150px */
-    width: 100%;
+    display: flex;
+    gap: 20px; /* מרווח בין האפשרויות */
+    padding: 0;
+    width: auto;
 }
 
-        nav ul li a {
-            text-decoration: none;
-            color: #e2e8f0;
-            font-size: 20px;
-            padding: 15px 30px;
-            display: block;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
-        nav ul li a:hover {
-            background: #4a5568;
-            color: #fff;
-        }
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* רקע חצי שקוף */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
-    z-index: 998; /* מתחת ל-nav (שיש לו z-index: 999) אבל מעל התוכן */
+nav ul li a {
+    text-decoration: none;
+    color: #fff; /* טקסט לבן להתאמה לרקע */
+    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-.overlay.active {
-    opacity: 1;
-    visibility: visible;
+nav ul li a:hover {
+    background: #163d8b; /* צבע כהה יותר בעת hover */
+    color: #e2e8f0;
+    border-radius: 5px;
+}
+
+/* הסתרת התפריט בעת גלילה למטה */
+nav.hidden {
+    transform: translateY(-100%);
+}
+
+/* התאמות לטלפונים (מתחת ל-768px) */
+@media screen and (max-width: 768px) {
+    nav {
+        top: 50px; /* מתאים לגובה ה-header בטלפונים */
+        padding: 5px 20px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
 }
 
         section {
@@ -366,9 +353,16 @@ button.cta-button {
 }
 
 #milestones {
-    padding: 120px 40px 60px; /* Match padding with other sections */
-    max-width: 1100px; /* Match max-width with other sections */
-    margin: 0 auto; /* Center the section */
+    padding: 120px 40px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: right;
+    background: linear-gradient(135deg, #fff3e0, #fff);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+    position: relative;
 }
 
 .milestones-container {
@@ -380,17 +374,19 @@ button.cta-button {
 
 .milestone-card {
     background: #fff;
+    border: none; /* הסר את המסגרת */
     border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* צל קל כגבול */
     padding: 20px;
-    width: calc(33.333% - 20px); /* שלושה בעמודה */
+    width: calc(33.333% - 20px);
     min-width: 280px;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .milestone-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* צל חזק יותר בה Hover */
 }
 
 .milestone-card h3 {
@@ -422,9 +418,6 @@ button.cta-button {
         font-size: 18px; /* טקסט קטן יותר בטלפון */
     }
 
-    .menu-button {
-        font-size: 24px; /* כפתור תפריט קטן יותר */
-    }
 
       nav {
         width: 70%; /* התאמת רוחב לטלפונים */
@@ -559,17 +552,19 @@ button.cta-button {
     }
 }
         
-        #milestones {
+   #milestones {
         padding: 80px 20px 40px;
         max-width: 100%;
     }
 
-     .milestones-container {
+    .milestones-container {
         flex-direction: column;
         align-items: center;
     }
-    .milestone-card {
+
+   .milestone-card {
         width: 100%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* צל קל יותר בטלפונים */
     }
 }
 
@@ -585,7 +580,6 @@ button.cta-button {
         font-size: 14px;
     }
 }
-
 /* רספונסיביות עבור מסכים בינוניים (טאבלטים, 768px-1024px) */
 @media screen and (max-width: 1024px) {
     section {
@@ -660,21 +654,19 @@ header {
             <span class="hebrew-name">עילית נוער ישראלית (חל"צ)</span>
         </span>
     </div>
-    <button class="menu-button" onclick="toggleMenu()">☰</button>
 </header>
     <nav id="nav">
         <ul>
-            <li><a href="#about">?מי אנחנו</a></li>
+            <li><a href="#about">מי אנחנו?</a></li>
             <li><a href="#mission">המשימה שלנו</a></li>
             <li><a href="#process">הדרך שלנו</a></li>
-            <li><a href="#unique">?מה מיוחד בנו</a></li>
+            <li><a href="#unique">מה מיוחד בנו?</a></li>
             <li><a href="#youth-risk">על סיכון בנוער</a></li> 
             <li><a href="#milestones">אבני דרך</a></li>
             <li><a href="#founders">המייסדים</a></li>
             <li><a href="#registration">צרו קשר</a></li>
         </ul>
     </nav>
-<div id="overlay" class="overlay"></div>
 
    <section id="about">
         <h2>מי אנחנו?</h2>
@@ -822,53 +814,29 @@ header {
     </footer>
    
 <script>
-    function toggleMenu() {
-        var nav = document.getElementById("nav");
-        var overlay = document.getElementById("overlay");
-        nav.classList.toggle("open");
-        overlay.classList.toggle("active");
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var nav = document.getElementById("nav");
-        var overlay = document.getElementById("overlay");
-        nav.classList.remove('open');
-        overlay.classList.remove('active');
-    });
-
+    // פונקציה להסתרת/הצגת ה-header וה-nav בעת גלילה
     let lastScroll = 0;
     window.addEventListener('scroll', function() {
         let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
         let header = document.querySelector('header');
-        
+        let nav = document.querySelector('nav');
+
         if (currentScroll > lastScroll && currentScroll > 50) {
+            // גלילה למטה מעבר ל-50px - הסתר את ה-header וה-nav
             header.style.transform = 'translateY(-100%)';
+            nav.classList.add('hidden');
         } else {
+            // גלילה למעלה או בתחילת הדף - הצג את ה-header וה-nav
             header.style.transform = 'translateY(0)';
+            nav.classList.remove('hidden');
         }
         lastScroll = currentScroll;
     });
 
-    document.addEventListener('click', function(event) {
-        var nav = document.getElementById("nav");
-        var overlay = document.getElementById("overlay");
-        var menuButton = document.querySelector('.menu-button');
-
-        if (!nav.contains(event.target) && !menuButton.contains(event.target) && nav.classList.contains('open')) {
-            nav.classList.remove('open');
-            overlay.classList.remove('active');
-        }
-    });
-
-    window.addEventListener('resize', function() {
-        var nav = document.getElementById("nav");
-        var overlay = document.getElementById("overlay");
-        var windowWidth = window.innerWidth;
-
-        if (windowWidth > 768 && nav.classList.contains('open')) {
-            nav.classList.remove('open');
-            overlay.classList.remove('active');
-        }
+    // בדיקה בטעינה ראשונית
+    document.addEventListener('DOMContentLoaded', function() {
+        let nav = document.querySelector('nav');
+        nav.classList.remove('hidden'); // ודא שה-nav גלוי בטעינה
     });
 </script>
 </body>
