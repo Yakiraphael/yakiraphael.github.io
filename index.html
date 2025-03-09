@@ -43,8 +43,8 @@
         }
 
         .header-content img {
-            width: 110px;
-            margin-right: 10px;
+            width: 100px;
+            margin-right: 0px;
         }
 
         .header-title {
@@ -62,12 +62,13 @@
         .header-title .hebrew-name {
             font-size: 20px;
             color: #e8f5e9;
+                        font-weight: 700;
         }
 
         nav {
             position: sticky;
             top: 60px;
-            width: 100%;
+            width: 90%;
             background: linear-gradient(135deg, #1e40af, #3b82f6);
             display: flex;
             justify-content: flex-end;
@@ -106,8 +107,8 @@
         }
 
         section {
-            padding: 120px 40px 60px;
-            max-width: 1100px;
+            padding: 100px 20px 30px;
+            max-width: 1000px;
             margin: 0 auto;
             text-align: right;
             border-radius: 16px;
@@ -142,7 +143,7 @@
         }
 
         p {
-            font-size: 18px;
+            font-size: 16px;
             color: #4a5568;
             margin-bottom: 20px;
         }
@@ -160,25 +161,25 @@
         }
 
         #about .floating-img {
-            width: 200px;
+            width: 180px;
             bottom: -100px;
             left: 100px;
         }
 
         #mission .floating-img {
-            width: 200px;
-            bottom: -100px;
+            width: 180px;
+            bottom: -120px;
             left: 20px;
         }
 
         #process .floating-img {
-            width: 250px;
+            width: 180px;
             bottom: -80px;
             right: 280px;
         }
 
         #unique .floating-img {
-            width: 260px;
+            width: 200px;
             bottom: -70px;
             left: 50px;
         }
@@ -190,13 +191,13 @@
         #founders h2 {
             margin-bottom: 50px;
         }
-
-        .founders-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
+        
+.founders-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
 
         .founder-card {
             background: #fff;
@@ -342,33 +343,33 @@
             box-sizing: border-box;
         }
 
-        button.cta-button {
-            margin-top: 15px;
-            width: 40px;
-            height: 40px;
-            padding: 0;
-        }
+ button.cta-button {
+    margin-top: 10px;
+    width: 35px; /* קטן יותר */
+    height: 35px;
+    padding: 0;
+}
 
-        .submit-text {
-            display: inline-block;
-            background-color: #1e60af;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 16px;
-            text-align: center;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+.submit-text {
+    display: inline-block;
+    background-color: #1e60af;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        .submit-text:hover {
-            background-color: #163d8b;
-        }
+       .submit-text:hover {
+    background-color: #163d8b;
+}
 
         #milestones {
-            padding: 120px 40px 60px;
-            max-width: 1100px;
+            padding: 100px 15px 30px;
+            max-width: 1000px;
             margin: 0 auto;
             text-align: right;
             background: linear-gradient(135deg, #fff3e0, #fff);
@@ -451,7 +452,7 @@
                 top: 0;
                 right: -80%;
                 width: 70%;
-                height: 100%;
+                height: 110%;
                 background: #1a202c;
                 flex-direction: column;
                 align-items: center;
@@ -460,7 +461,9 @@
                 box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
                 overflow-y: auto;
                 padding: 20px 0;
-                display: none;
+                display: flex;
+                text-decoration: none
+
             }
 
             nav.open {
@@ -471,8 +474,8 @@
             nav ul {
                 flex-direction: column;
                 gap: 8px;
-                padding: 100px 0 20px;
-                width: 100%;
+                padding: 80px 0 15px;
+                width: 80%;
             }
 
             nav ul li a {
@@ -502,6 +505,95 @@
                 display: none;
             }
         }
+        
+           #milestones {
+    .milestones-container {
+        gap: 20px; /* Reduced gap for mobile */
+    }
+
+    .milestone-card {
+        width: 75%; /* Full width on mobile */
+        min-width: 20%; /* Remove min-width constraint */
+        margin: 0; /* Remove extra margin */
+        padding: 20px; /* Slightly reduced padding */
+    }
+
+    .milestone-card h3 {
+        font-size: 20px; /* Slightly smaller font size */
+    }
+
+    .milestone-date {
+        font-size: 14px; /* Slightly smaller font size */
+    }
+
+    .milestone-card p {
+        font-size: 14px; /* Slightly smaller font size */
+    }
+}
+  .founders-container {
+        flex-direction: column;
+        align-items: center; /* ממרכז את הכרטיסים */
+        gap: 20px;
+    }
+
+    .founder-card {
+        width: 90%; /* מתאים לרוחב המסך */
+        max-width: 400px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .founder-card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    .founder-title {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .founder-card p, .founder-card .quote {
+        font-size: 14px;
+    }
+}
+/* התאמות למסכים קטנים */
+@media (max-width: 768px) {
+    .forms-container {
+        flex-direction: column; /* הופך את המבנה לטור */
+        align-items: center;
+        gap: 20px; /* רווח קטן יותר בין הטפסים */
+    }
+
+    .form-section {
+        width: 90%; /* מרחיב את הטופס לכל הרוחב */
+        min-width: auto; /* מונע מגבלה מיותרת */
+        padding: 15px;
+    }
+
+    .form-section h3 {
+        font-size: 20px; /* מקטין את הכותרות */
+        text-align: center;
+    }
+
+    input {
+        font-size: 14px; /* מקטין טקסט בשדות */
+        padding: 8px;
+    }
+
+    button.cta-button {
+        width: 35px; /* כפתור קטן יותר */
+        height: 35px;
+    }
+
+    .submit-text {
+        width: 100%; /* מתאים את הכפתור לכל הרוחב */
+        font-size: 14px; /* מקטין את הכיתוב */
+        padding: 8px 15px;
+    }
 
         @media screen and (max-width: 1024px) {
             section {
@@ -517,6 +609,26 @@
                 width: 45%;
             }
         }
+        
+.   .founders-container {
+            flex-direction: column;
+            gap: 30px;
+        }
+        .founder-card {
+            padding: 15px;
+        }
+        .founder-card img {
+            width: 100px;
+            height: 100px;
+        }
+        .founder-card .founder-title {
+            font-size: 18px;
+        }
+        .founder-card p, .founder-card .quote {
+            font-size: 14px;
+        }
+    }
+
     </style>
 </head>
 <body>
@@ -708,22 +820,6 @@
             touchEndX = event.changedTouches[0].clientX;
             handleSwipe();
         });
-
-        // טיפול בגרירה
-        function handleSwipe() {
-            const swipeDistance = touchEndX - touchStartX;
-            const windowWidth = window.innerWidth;
-
-            if (windowWidth <= 768) {
-                if (swipeDistance > 50) {
-                    // גרירה מימין לשמאל (פתיחה)
-                    nav.style.right = '0';
-                } else if (swipeDistance < -50) {
-                    // גרירה משמאל לימין (סגירה)
-                    nav.style.right = '-70%';
-                }
-            }
-        }
 
         // הסתרת/הצגת ה-header וה-nav בעת גלילה
         let lastScroll = 0;
