@@ -26,7 +26,7 @@ header {
     background: linear-gradient(135deg, #1e40af, #3b82f6);
     padding: 15px 40px;
     display: flex;
-    justify-content: center; /* מרכוז התוכן */
+     justify-content: space-between;
     align-items: center;
     z-index: 1000;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -36,7 +36,9 @@ header {
 .header-content {
     display: flex;
     align-items: center;
-    text-align: center; /* מרכוז הטקסט */
+    justify-content: center; /* מרכוז התוכן (לוגו ושם) */
+    text-align: center;
+    flex-grow: 1; /* מאפשר למרכז את התוכן במרחב */
 }
 
 .header-content img {
@@ -57,14 +59,14 @@ header {
 }
 
 .header-title .hebrew-name {
-    font-size: 16px;
+    font-size: 20px;
     color: #e8f5e9;
 }
 
 nav {
     position: sticky;
     top: 60px; /* מתחת ל-header בדסקטופ */
-    width: 100%;
+    width: 90%;
     background: linear-gradient(135deg, #1e40af, #3b82f6);
     display: flex;
     justify-content: flex-end;
@@ -78,7 +80,7 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     padding: 0;
     width: auto;
 }
@@ -86,7 +88,7 @@ nav ul {
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
     padding: 10px 15px;
     display: block;
     transition: background 0.3s ease, color 0.3s ease;
@@ -410,20 +412,28 @@ button.cta-button {
         text-align: center;
     }
 
-    .header-content img {
-        margin-right: 0;
-        margin-bottom: 5px; /* מרווח בין הלוגו לשם בטלפונים */
+      .header-content img {
+        width: 80px;
     }
 
-    .menu-button {
-        right: 10px;
+    .header-title .english-name {
+        font-size: 16px;
+    }
+
+    .header-title .hebrew-name {
+        font-size: 16px;
     }
 }
+
+body {
+        font-size: 14px;
+    }
+
     nav {
         position: fixed;
         top: 0;
-        right: -80%; /* הקטנתי מ-100% ל-80% למראה חלק יותר */
-        width: 80%; /* רוחב התפריט בטלפונים */
+        right: -80%; /* התפריט פתוח כברירת מחדל */
+        width: 70%; /* רוחב התפריט בטלפונים */
         height: 100%;
         background: #1a202c;
         flex-direction: column;
@@ -433,24 +443,24 @@ button.cta-button {
         box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
         overflow-y: auto;
         padding: 20px 0;
-        display: none;
+      display: none
     }
 
-    nav.open {
-        right: 0;
+nav.open {
+        right: 0; /* גלילה למיקום פתוח */
         display: flex;
     }
 
     nav ul {
         flex-direction: column;
-        gap: 10px;
-        padding: 120px 0 40px;
+        gap: 8px;
+        padding: 100px 0 20px;
         width: 100%;
     }
 
     nav ul li a {
-        font-size: 16px;
-        padding: 10px 20px;
+        font-size: 14px;
+        padding: 8px 15px;
         color: #e2e8f0;
     }
 
@@ -461,17 +471,16 @@ button.cta-button {
 }
 
         section {
-        padding: 80px 20px 40px;
-        max-width: 100%;
+        padding: 60px 15px 30px;
     }
 }
 
-    h2 {
-        font-size: 24px; /* כותרת קטנה יותר בטלפון */
+   h2 {
+        font-size: 20px; /* כותרת קטנה יותר */
     }
 
     p {
-        font-size: 16px; /* טקסט קטן יותר בטלפון */
+        font-size: 14px; /* טקסט קטן יותר בטלפון */
     }
 
       .floating-img {
@@ -497,8 +506,7 @@ button.cta-button {
             gap: 30px;
         }
         .founder-card {
-            width: 100%;
-            padding: 20px;
+            padding: 15px;
         }
         .founder-card img {
             width: 100px;
@@ -585,9 +593,8 @@ button.cta-button {
     }
 
     .milestone-card {
-        width: 100%;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12); /* צל מעט קל יותר בטלפונים */
-        padding: 20px; /* הקטן מעט את הפדים בטלפונים */
+        padding: 15px; /* הקטן מעט את הפדים בטלפונים */
         margin: 5px; /* שמור על רווח חיצוני */
     }
 
@@ -635,12 +642,6 @@ button.cta-button {
     font-weight: 700;
     font-size: 14px;
     transition: background 0.3s ease, transform 0.3s ease;
-}
-
-
-/* הסר את ה-::before שגרם לרקע כחול מעל הטקסט */
-.cta-button::before {
-    display: none; /* הסר את האפקט הזה */
 }
 
 .cta-button:hover {
@@ -850,29 +851,75 @@ header {
     </footer>
    
 <script>
-    // פונקציה להסתרת/הצגת ה-header וה-nav בעת גלילה
-    let lastScroll = 0;
-    window.addEventListener('scroll', function() {
-        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        let header = document.querySelector('header');
-        let nav = document.querySelector('nav');
-
-        if (currentScroll > lastScroll && currentScroll > 50) {
-            // גלילה למטה מעבר ל-50px - הסתר את ה-header וה-nav
-            header.style.transform = 'translateY(-100%)';
-            nav.classList.add('hidden');
-        } else {
-            // גלילה למעלה או בתחילת הדף - הצג את ה-header וה-nav
-            header.style.transform = 'translateY(0)';
-            nav.classList.remove('hidden');
-        }
-        lastScroll = currentScroll;
-    });
-
-    // בדיקה בטעינה ראשונית
+    // תמיכה בגרירה בטלפונים
     document.addEventListener('DOMContentLoaded', function() {
-        let nav = document.querySelector('nav');
-        nav.classList.remove('hidden'); // ודא שה-nav גלוי בטעינה
+        const nav = document.querySelector('nav');
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        // זיהוי תחילת מגע
+        nav.addEventListener('touchstart', function(event) {
+            touchStartX = event.touches[0].clientX;
+        });
+
+        // זיהוי סיום מגע
+        nav.addEventListener('touchend', function(event) {
+            touchEndX = event.changedTouches[0].clientX;
+            handleSwipe();
+        });
+
+        // טיפול בגרירה
+        function handleSwipe() {
+            const swipeDistance = touchEndX - touchStartX;
+            const windowWidth = window.innerWidth;
+
+            if (windowWidth <= 768) {
+                if (swipeDistance > 50) {
+                    // גרירה מימין לשמאל (פתיחה)
+                    nav.style.right = '0';
+                } else if (swipeDistance < -50) {
+                    // גרירה משמאל לימין (סגירה)
+                    nav.style.right = '-70%';
+                }
+            }
+        }
+
+        // הסתרת/הצגת ה-header וה-nav בעת גלילה
+        let lastScroll = 0;
+        window.addEventListener('scroll', function() {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            let header = document.querySelector('header');
+            let nav = document.querySelector('nav');
+            let windowWidth = window.innerWidth;
+
+            if (currentScroll > lastScroll && currentScroll > 50) {
+                if (windowWidth > 768) {
+                    header.style.transform = 'translateY(-100%)';
+                    nav.classList.add('hidden');
+                } else {
+                    nav.style.right = '-70%'; // סגירת התפריט בטלפונים בעת גלילה
+                }
+            } else {
+                if (windowWidth > 768) {
+                    header.style.transform = 'translateY(0)';
+                    nav.classList.remove('hidden');
+                } else {
+                    nav.style.right = '0'; // פתיחת התפריט בטלפונים בעת גלילה למעלה
+                }
+            }
+            lastScroll = currentScroll;
+        });
+
+        // בדיקה בטעינה ראשונית
+        document.addEventListener('DOMContentLoaded', function() {
+            let nav = document.querySelector('nav');
+            let windowWidth = window.innerWidth;
+            if (windowWidth > 768) {
+                nav.classList.remove('hidden');
+            } else {
+                nav.style.right = '0'; // פתוח כברירת מחדל בטלפונים
+            }
+        });
     });
 </script>
 </body>
