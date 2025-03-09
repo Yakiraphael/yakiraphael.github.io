@@ -11,7 +11,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Heebo', sans-serif;
             background-color: #f8fafc;
@@ -49,8 +49,9 @@
 
         .header-title {
             display: flex;
-            flex-direction: column;
+            flex-direction: row-reverse;
             align-items: center;
+            gap: 5px; /* רווח בין השורות */
         }
 
         .header-title .english-name {
@@ -452,7 +453,7 @@
                 top: 0;
                 right: -80%;
                 width: 70%;
-                height: 110%;
+                height: 100%;
                 background: #1a202c;
                 flex-direction: column;
                 align-items: center;
@@ -464,11 +465,6 @@
                 display: flex;
                 text-decoration: none
 
-            }
-
-            nav.open {
-                right: 0;
-                display: flex;
             }
 
             nav ul {
@@ -638,7 +634,7 @@
     <div class="header-content">
         <img src="https://sigmawire.net/i/03/e5OTs1.png" alt="לוגו" width="110">
         <span class="header-title">
-            <span class="english-name">Elite Israeli Youth CIC</span><br>
+            <span class="english-name">| Elite Israeli Youth CIC </span><br>
             <span class="hebrew-name">עילית נוער ישראלית (חל"צ)</span>
         </span>
     </div>
